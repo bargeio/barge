@@ -9,4 +9,4 @@ tasks:
 
 vscode:
   extensions:
-    - premparihar.gotestexplorer
+    - golang.go
