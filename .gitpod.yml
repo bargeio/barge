@@ -1,0 +1,9 @@
+image: gitpod/workspace-full
+
+tasks:
+  - before: brew install go-task/tap/go-task
+  - init: task get
+
+vscode:
+  extensions:
+    - premparihar.gotestexplorer
