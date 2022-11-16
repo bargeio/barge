@@ -15,4 +15,4 @@ tasks:
       - go get -x -t
   build:
     cmds:
-      - go build -v
+      - go build -v -o build/barge
