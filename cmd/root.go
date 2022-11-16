@@ -12,14 +12,9 @@ var rootCmd = &cobra.Command{
 	Short: "Backup/restore for developers",
 	Long: `Barge is a command-line tool to simplify typical backups and restore
 operations during development.`,
-	// Uncomment the following line if your bare application
-	// has an action associated with it:
-	// Run: func(cmd *cobra.Command, args []string) { },
-	// PreRun: func(cmd *cobra.Command, args [] string) {
-	// Find configuration file
-	// Load configuration file
-	// },
+	PersistentPreRun: func(cmd *cobra.Command, args []string) {
 
+	},
 }
 
 // Execute adds all child commands to the root command and sets flags appropriately.
