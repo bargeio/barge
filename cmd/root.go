@@ -1,10 +1,15 @@
 package cmd
 
 import (
+	"log"
 	"os"
 
 	"github.com/spf13/cobra"
+
+	"github.com/bargeio/barge/pkg/config"
 )
+
+var bargeConfig *config.Config
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
@@ -12,8 +17,16 @@ var rootCmd = &cobra.Command{
 	Short: "Backup/restore for developers",
 	Long: `Barge is a command-line tool to simplify typical backups and restore
 operations during development.`,
-	PersistentPreRun: func(cmd *cobra.Command, args []string) {
+	PersistentPreRunE: func(cmd *cobra.Command, args []string) error {
+		var err error
+		bargeConfig, err = config.GetConfig()
+		if err != nil {
+			// TODO give a better error message
+			log.Fatal(err)
+			return err
+		}
 
+		return nil
 	},
 }
 

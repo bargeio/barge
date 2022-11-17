@@ -13,6 +13,8 @@ var exportCmd = &cobra.Command{
 	Long:  `Export the specified assets to the specified destination.`,
 	Run: func(cmd *cobra.Command, args []string) {
 		fmt.Println("export called")
+		fmt.Printf("Arguments: %v\n", args)
+		fmt.Printf("Configuration: %v\n", bargeConfig)
 	},
 }
 
